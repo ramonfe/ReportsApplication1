@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <PublishUrlHistory>C:\MyProjects\vs2008\ReportsApplication1\publish\|C:\MyProjects\vs2008\ReportsApplication1\|publish\</PublishUrlHistory>
+    <InstallUrlHistory>\\W2ECFS\GROUP\SIMGAP\</InstallUrlHistory>
+    <SupportUrlHistory>http://www.dilecso.com.mx</SupportUrlHistory>
+    <UpdateUrlHistory>\\W2LXFS\GROUP\SIMGAP\INSTALACION\|\\W2ECFS\GROUP\SIMGAP\INSTALACION\</UpdateUrlHistory>
+    <BootstrapperUrlHistory>
+    </BootstrapperUrlHistory>
+    <FallbackCulture>en-US</FallbackCulture>
+    <VerifyUploadedFiles>false</VerifyUploadedFiles>
+    <ReferencePath>C:\Program Files\Business Objects\Common\2.8\managed\</ReferencePath>
+    <ProjectView>ProjectFiles</ProjectView>
+    <EnableSecurityDebugging>false</EnableSecurityDebugging>
+    <ErrorReportUrlHistory />
+  </PropertyGroup>
+</Project>

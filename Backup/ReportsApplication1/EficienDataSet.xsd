@@ -1,0 +1,827 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EficienDataSet" targetNamespace="http://tempuri.org/EficienDataSet.xsd" xmlns:mstns="http://tempuri.org/EficienDataSet.xsd" xmlns="http://tempuri.org/EficienDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="EficienConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="EficienConnectionString (Settings)" PropertyReference="ApplicationSettings.ReportsApplication1.Properties.Settings.GlobalReference.Default.EficienConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DepartamentosTableAdapter" GeneratorDataComponentClassName="DepartamentosTableAdapter" Name="Departamentos" UserDataComponentName="DepartamentosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="EficienConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        FBU_s.FBU, FBU_s.Descripcion AS fbu_desc, Departamentos.Departamento, Departamentos.Descripcion
+FROM            (Departamentos INNER JOIN
+                         FBU_s ON Departamentos.FBU = FBU_s.FBU)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Departamento" DataSetColumn="Departamento" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="FBU" DataSetColumn="FBU" />
+              <Mapping SourceColumn="fbu_desc" DataSetColumn="fbu_desc" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CentrosTrabajosTableAdapter" GeneratorDataComponentClassName="CentrosTrabajosTableAdapter" Name="CentrosTrabajos" UserDataComponentName="CentrosTrabajosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="EficienConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        FBU_s.FBU, FBU_s.Descripcion AS fbu_desc, Departamentos.Departamento, Departamentos.Descripcion AS depDesc, CentrosTrabajos.CentroTrabajo, 
+                         CentrosTrabajos.Descripcion
+FROM            ((CentrosTrabajos INNER JOIN
+                         Departamentos ON CentrosTrabajos.Departamento = Departamentos.Departamento) INNER JOIN
+                         FBU_s ON CentrosTrabajos.FBU = FBU_s.FBU)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CentroTrabajo" DataSetColumn="CentroTrabajo" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="Departamento" DataSetColumn="Departamento" />
+              <Mapping SourceColumn="depDesc" DataSetColumn="depDesc" />
+              <Mapping SourceColumn="FBU" DataSetColumn="FBU" />
+              <Mapping SourceColumn="fbu_desc" DataSetColumn="fbu_desc" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LineasTableAdapter" GeneratorDataComponentClassName="LineasTableAdapter" Name="Lineas" UserDataComponentName="LineasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="EficienConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        FBU_s.FBU, FBU_s.Descripcion AS fbu_desc, Departamentos.Departamento, Departamentos.Descripcion, CentrosTrabajos.CentroTrabajo, 
+                         CentrosTrabajos.Descripcion AS ctDesc, Lineas.Linea, Lineas.Descripcion AS linDesc
+FROM            (((Lineas INNER JOIN
+                         Departamentos ON Lineas.Departamento = Departamentos.Departamento) INNER JOIN
+                         CentrosTrabajos ON Lineas.CentroTrabajo = CentrosTrabajos.CentroTrabajo) INNER JOIN
+                         FBU_s ON Lineas.FBU = FBU_s.FBU)
+ORDER BY Lineas.Linea</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Linea" DataSetColumn="Linea" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="Departamento" DataSetColumn="Departamento" />
+              <Mapping SourceColumn="CentroTrabajo" DataSetColumn="CentroTrabajo" />
+              <Mapping SourceColumn="ctDesc" DataSetColumn="ctDesc" />
+              <Mapping SourceColumn="linDesc" DataSetColumn="linDesc" />
+              <Mapping SourceColumn="FBU" DataSetColumn="FBU" />
+              <Mapping SourceColumn="fbu_desc" DataSetColumn="fbu_desc" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CodigosDeOperacionTableAdapter" GeneratorDataComponentClassName="CodigosDeOperacionTableAdapter" Name="CodigosDeOperacion" UserDataComponentName="CodigosDeOperacionTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="EficienConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     FBU_s.FBU, FBU_s.Descripcion AS fbu_desc, CentrosTrabajos.CentroTrabajo, CentrosTrabajos.Descripcion AS desc_ct, 
+                      Departamentos.Departamento AS deptoDesc, CodigosDeOperacion.CodigoOperacion, CodigosDeOperacion.CodigoReferencia, 
+                      CodigosDeOperacion.NumeroOperacion, CodigosDeOperacion.DescEsp, CodigosDeOperacion.System_Standard, CodigosDeOperacion.Standard, 
+                      CodigosDeOperacion.Operadores, CodigosDeOperacion.Standard_Group, CodigosDeOperacion.MTM, CodigosDeOperacion.Oracle
+FROM         (((CodigosDeOperacion INNER JOIN
+                      Departamentos ON CodigosDeOperacion.Departamento = Departamentos.Departamento) INNER JOIN
+                      FBU_s ON CodigosDeOperacion.FBU = FBU_s.FBU) INNER JOIN
+                      CentrosTrabajos ON CodigosDeOperacion.CentroTrabajo = CentrosTrabajos.CentroTrabajo)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CodigoOperacion" DataSetColumn="CodigoOperacion" />
+              <Mapping SourceColumn="CodigoReferencia" DataSetColumn="CodigoReferencia" />
+              <Mapping SourceColumn="NumeroOperacion" DataSetColumn="NumeroOperacion" />
+              <Mapping SourceColumn="DescEsp" DataSetColumn="DescEsp" />
+              <Mapping SourceColumn="deptoDesc" DataSetColumn="deptoDesc" />
+              <Mapping SourceColumn="System_Standard" DataSetColumn="System_Standard" />
+              <Mapping SourceColumn="Standard" DataSetColumn="Standard" />
+              <Mapping SourceColumn="Operadores" DataSetColumn="Operadores" />
+              <Mapping SourceColumn="Standard_Group" DataSetColumn="Standard_Group" />
+              <Mapping SourceColumn="MTM" DataSetColumn="MTM" />
+              <Mapping SourceColumn="Oracle" DataSetColumn="Oracle" />
+              <Mapping SourceColumn="FBU" DataSetColumn="FBU" />
+              <Mapping SourceColumn="fbu_desc" DataSetColumn="fbu_desc" />
+              <Mapping SourceColumn="CentroTrabajo" DataSetColumn="CentroTrabajo" />
+              <Mapping SourceColumn="desc_ct" DataSetColumn="desc_ct" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="voucherTableAdapter" GeneratorDataComponentClassName="voucherTableAdapter" Name="vouchers" UserDataComponentName="voucherTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="EficienConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        IndiceVoucher.Fecha, IndiceVoucher.Turno, DetVoucher.Linea, FBU_s.FBU, FBU_s.Descripcion AS fbu_desc, EmpVoucher.Empleado AS numempl, 
+                         Empleados.Nombre AS nombEmpl, EmpVoucher.Supervisor, DetVoucher.Empezo, DetVoucher.Termino, DetVoucher.CodigoOperacion, 
+                         CodigosDeOperacion.DescEsp AS DescCodOp, DetVoucher.Horas, DetVoucher.ProdTotal, DetVoucher.Produccion, DetVoucher.Eficiencia
+FROM            (((CodigosDeOperacion INNER JOIN
+                         (IndiceVoucher INNER JOIN
+                         DetVoucher ON IndiceVoucher.NoVoucher = DetVoucher.NoVoucher) ON CodigosDeOperacion.CodigoOperacion = DetVoucher.CodigoOperacion) INNER JOIN
+                         FBU_s ON CodigosDeOperacion.FBU = FBU_s.FBU) LEFT OUTER JOIN
+                         (Empleados RIGHT OUTER JOIN
+                         EmpVoucher ON Empleados.Empleado = EmpVoucher.Empleado) ON IndiceVoucher.NoVoucher = EmpVoucher.NoVoucher)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
+              <Mapping SourceColumn="Turno" DataSetColumn="Turno" />
+              <Mapping SourceColumn="Supervisor" DataSetColumn="Supervisor" />
+              <Mapping SourceColumn="Empezo" DataSetColumn="Empezo" />
+              <Mapping SourceColumn="Termino" DataSetColumn="Termino" />
+              <Mapping SourceColumn="CodigoOperacion" DataSetColumn="CodigoOperacion" />
+              <Mapping SourceColumn="Horas" DataSetColumn="Horas" />
+              <Mapping SourceColumn="ProdTotal" DataSetColumn="ProdTotal" />
+              <Mapping SourceColumn="Produccion" DataSetColumn="Produccion" />
+              <Mapping SourceColumn="numempl" DataSetColumn="numempl" />
+              <Mapping SourceColumn="nombEmpl" DataSetColumn="nombEmpl" />
+              <Mapping SourceColumn="DescCodOp" DataSetColumn="DescCodOp" />
+              <Mapping SourceColumn="Eficiencia" DataSetColumn="Eficiencia" />
+              <Mapping SourceColumn="Linea" DataSetColumn="Linea" />
+              <Mapping SourceColumn="FBU" DataSetColumn="FBU" />
+              <Mapping SourceColumn="fbu_desc" DataSetColumn="fbu_desc" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="lstLineasTableAdapter" GeneratorDataComponentClassName="lstLineasTableAdapter" Name="lstLineas" UserDataComponentName="lstLineasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="EficienConnectionString (Settings)" DbObjectName="Lineas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Linea, Descripcion
+FROM            Lineas
+ORDER BY Descripcion</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Linea" DataSetColumn="Linea" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EmpleadosTableAdapter" GeneratorDataComponentClassName="EmpleadosTableAdapter" Name="Empleados" UserDataComponentName="EmpleadosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="EficienConnectionString (Settings)" DbObjectName="Empleados" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `Empleados` (`Empleado`, `Nombre`) VALUES (?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Empleado" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="Empleado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Nombre" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="Nombre" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Empleado, Nombre
+FROM            Empleados
+ORDER BY Nombre</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Empleado" DataSetColumn="Empleado" />
+              <Mapping SourceColumn="Nombre" DataSetColumn="Nombre" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="lstCodDirTableAdapter" GeneratorDataComponentClassName="lstCodDirTableAdapter" Name="lstCodDir" UserDataComponentName="lstCodDirTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="EficienConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        DetVoucher.Departamento, Departamentos.Descripcion, IndiceVoucher.Turno, ROUND(SUM(DetVoucher.Horas), 2) AS DHoras, 
+                         ROUND(SUM(DetVoucher.HEarned), 2) AS HEarned, ROUND(SUM(DetVoucher.Eficiencia), 2) AS Eficiencia, ROUND(SUM(DetVoucher.Produccion), 2) 
+                         AS Productivity
+FROM            (((IndiceVoucher INNER JOIN
+                         DetVoucher ON IndiceVoucher.NoVoucher = DetVoucher.NoVoucher) INNER JOIN
+                         Departamentos ON DetVoucher.Departamento = Departamentos.Departamento) INNER JOIN
+                         CodigosDeOperacion ON DetVoucher.CodigoOperacion = CodigosDeOperacion.CodigoOperacion)
+WHERE        (IndiceVoucher.Fecha &gt;= #2/23/2007#) AND (IndiceVoucher.Fecha &lt; #2/24/2007#) AND (IndiceVoucher.Turno = 1) AND 
+                         (CodigosDeOperacion.CodigoReferencia &lt;&gt; 'CDGOINDIRECTO')
+GROUP BY IndiceVoucher.Turno, DetVoucher.Departamento, Departamentos.Descripcion</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Turno" DataSetColumn="Turno" />
+              <Mapping SourceColumn="Departamento" DataSetColumn="Departamento" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="DHoras" DataSetColumn="DHoras" />
+              <Mapping SourceColumn="HEarned" DataSetColumn="HEarned" />
+              <Mapping SourceColumn="Eficiencia" DataSetColumn="Eficiencia" />
+              <Mapping SourceColumn="Productivity" DataSetColumn="Productivity" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="lstCodIndTableAdapter" GeneratorDataComponentClassName="lstCodIndTableAdapter" Name="lstCodInd" UserDataComponentName="lstCodIndTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="EficienConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        DetVoucher.Departamento, CodigosDeOperacion.Consecutivo, ROUND(SUM(DetVoucher.Horas), 2) AS DHoras
+FROM            ((IndiceVoucher INNER JOIN
+                         DetVoucher ON IndiceVoucher.NoVoucher = DetVoucher.NoVoucher) INNER JOIN
+                         CodigosDeOperacion ON DetVoucher.CodigoOperacion = CodigosDeOperacion.CodigoOperacion)
+WHERE        (IndiceVoucher.Fecha &gt;= #2/23/2007#) AND (IndiceVoucher.Fecha &lt; #2/24/2007#) AND (IndiceVoucher.Turno = 1) AND 
+                         (CodigosDeOperacion.CodigoReferencia = 'CDGOINDIRECTO')
+GROUP BY DetVoucher.Departamento, CodigosDeOperacion.Consecutivo</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Departamento" DataSetColumn="Departamento" />
+              <Mapping SourceColumn="DHoras" DataSetColumn="DHoras" />
+              <Mapping SourceColumn="Consecutivo" DataSetColumn="Consecutivo" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="lstFbusTableAdapter" GeneratorDataComponentClassName="lstFbusTableAdapter" Name="lstFbus" UserDataComponentName="lstFbusTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="EficienConnectionString (Settings)" DbObjectName="FBU_s" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        FBU, Descripcion
+FROM            FBU_s
+ORDER BY FBU</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="FBU" DataSetColumn="FBU" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SupervisoresTableAdapter" GeneratorDataComponentClassName="SupervisoresTableAdapter" Name="Supervisores" UserDataComponentName="SupervisoresTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="EficienConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     supervisores.Supervisor, supervisores.Nombre, Coordinadores.ID_Coordinador, Coordinadores.Nombre_coord
+FROM         ((Sup_Cord INNER JOIN
+                      supervisores ON Sup_Cord.ID_sup = supervisores.Supervisor) INNER JOIN
+                      Coordinadores ON Sup_Cord.ID_Cord = Coordinadores.ID_Coordinador)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Supervisor" DataSetColumn="Supervisor" />
+              <Mapping SourceColumn="Nombre" DataSetColumn="Nombre" />
+              <Mapping SourceColumn="ID_Coordinador" DataSetColumn="ID_Coordinador" />
+              <Mapping SourceColumn="Nombre_coord" DataSetColumn="Nombre_coord" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EficienDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="EficienDataSet" msprop:Generator_DataSetName="EficienDataSet" msprop:EnableTableAdapterManager="True">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="CentrosTrabajos" msprop:Generator_UserTableName="CentrosTrabajos" msprop:Generator_RowDeletedName="CentrosTrabajosRowDeleted" msprop:Generator_RowChangedName="CentrosTrabajosRowChanged" msprop:Generator_RowClassName="CentrosTrabajosRow" msprop:Generator_RowChangingName="CentrosTrabajosRowChanging" msprop:Generator_RowEvArgName="CentrosTrabajosRowChangeEvent" msprop:Generator_RowEvHandlerName="CentrosTrabajosRowChangeEventHandler" msprop:Generator_TableClassName="CentrosTrabajosDataTable" msprop:Generator_TableVarName="tableCentrosTrabajos" msprop:Generator_RowDeletingName="CentrosTrabajosRowDeleting" msprop:Generator_TablePropName="CentrosTrabajos">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CentroTrabajo" msprop:Generator_UserColumnName="CentroTrabajo" msprop:Generator_ColumnPropNameInRow="CentroTrabajo" msprop:Generator_ColumnVarNameInTable="columnCentroTrabajo" msprop:Generator_ColumnPropNameInTable="CentroTrabajoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descripcion" msprop:Generator_UserColumnName="Descripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Departamento" msprop:Generator_UserColumnName="Departamento" msprop:Generator_ColumnPropNameInRow="Departamento" msprop:Generator_ColumnVarNameInTable="columnDepartamento" msprop:Generator_ColumnPropNameInTable="DepartamentoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="depDesc" msprop:Generator_UserColumnName="depDesc" msprop:Generator_ColumnPropNameInRow="depDesc" msprop:Generator_ColumnVarNameInTable="columndepDesc" msprop:Generator_ColumnPropNameInTable="depDescColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="225" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FBU" msprop:Generator_UserColumnName="FBU" msprop:Generator_ColumnVarNameInTable="columnFBU" msprop:Generator_ColumnPropNameInRow="FBU" msprop:Generator_ColumnPropNameInTable="FBUColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fbu_desc" msprop:Generator_UserColumnName="fbu_desc" msprop:Generator_ColumnVarNameInTable="columnfbu_desc" msprop:Generator_ColumnPropNameInRow="fbu_desc" msprop:Generator_ColumnPropNameInTable="fbu_descColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="225" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Lineas" msprop:Generator_UserTableName="Lineas" msprop:Generator_RowDeletedName="LineasRowDeleted" msprop:Generator_RowChangedName="LineasRowChanged" msprop:Generator_RowClassName="LineasRow" msprop:Generator_RowChangingName="LineasRowChanging" msprop:Generator_RowEvArgName="LineasRowChangeEvent" msprop:Generator_RowEvHandlerName="LineasRowChangeEventHandler" msprop:Generator_TableClassName="LineasDataTable" msprop:Generator_TableVarName="tableLineas" msprop:Generator_RowDeletingName="LineasRowDeleting" msprop:Generator_TablePropName="Lineas">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Linea" msprop:Generator_UserColumnName="Linea" msprop:Generator_ColumnVarNameInTable="columnLinea" msprop:Generator_ColumnPropNameInRow="Linea" msprop:Generator_ColumnPropNameInTable="LineaColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descripcion" msprop:Generator_UserColumnName="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="225" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Departamento" msprop:Generator_UserColumnName="Departamento" msprop:Generator_ColumnPropNameInRow="Departamento" msprop:Generator_ColumnVarNameInTable="columnDepartamento" msprop:Generator_ColumnPropNameInTable="DepartamentoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CentroTrabajo" msprop:Generator_UserColumnName="CentroTrabajo" msprop:Generator_ColumnPropNameInRow="CentroTrabajo" msprop:Generator_ColumnVarNameInTable="columnCentroTrabajo" msprop:Generator_ColumnPropNameInTable="CentroTrabajoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ctDesc" msprop:Generator_UserColumnName="ctDesc" msprop:Generator_ColumnPropNameInRow="ctDesc" msprop:Generator_ColumnVarNameInTable="columnctDesc" msprop:Generator_ColumnPropNameInTable="ctDescColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="linDesc" msprop:Generator_UserColumnName="linDesc" msprop:Generator_ColumnPropNameInRow="linDesc" msprop:Generator_ColumnVarNameInTable="columnlinDesc" msprop:Generator_ColumnPropNameInTable="linDescColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="225" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FBU" msprop:Generator_UserColumnName="FBU" msprop:Generator_ColumnVarNameInTable="columnFBU" msprop:Generator_ColumnPropNameInRow="FBU" msprop:Generator_ColumnPropNameInTable="FBUColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fbu_desc" msprop:Generator_UserColumnName="fbu_desc" msprop:Generator_ColumnVarNameInTable="columnfbu_desc" msprop:Generator_ColumnPropNameInRow="fbu_desc" msprop:Generator_ColumnPropNameInTable="fbu_descColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="225" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CodigosDeOperacion" msprop:Generator_UserTableName="CodigosDeOperacion" msprop:Generator_RowDeletedName="CodigosDeOperacionRowDeleted" msprop:Generator_RowChangedName="CodigosDeOperacionRowChanged" msprop:Generator_RowClassName="CodigosDeOperacionRow" msprop:Generator_RowChangingName="CodigosDeOperacionRowChanging" msprop:Generator_RowEvArgName="CodigosDeOperacionRowChangeEvent" msprop:Generator_RowEvHandlerName="CodigosDeOperacionRowChangeEventHandler" msprop:Generator_TableClassName="CodigosDeOperacionDataTable" msprop:Generator_TableVarName="tableCodigosDeOperacion" msprop:Generator_RowDeletingName="CodigosDeOperacionRowDeleting" msprop:Generator_TablePropName="CodigosDeOperacion">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CodigoOperacion" msprop:Generator_UserColumnName="CodigoOperacion" msprop:Generator_ColumnVarNameInTable="columnCodigoOperacion" msprop:Generator_ColumnPropNameInRow="CodigoOperacion" msprop:Generator_ColumnPropNameInTable="CodigoOperacionColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CodigoReferencia" msprop:Generator_UserColumnName="CodigoReferencia" msprop:Generator_ColumnVarNameInTable="columnCodigoReferencia" msprop:Generator_ColumnPropNameInRow="CodigoReferencia" msprop:Generator_ColumnPropNameInTable="CodigoReferenciaColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NumeroOperacion" msprop:Generator_UserColumnName="NumeroOperacion" msprop:Generator_ColumnVarNameInTable="columnNumeroOperacion" msprop:Generator_ColumnPropNameInRow="NumeroOperacion" msprop:Generator_ColumnPropNameInTable="NumeroOperacionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DescEsp" msprop:Generator_UserColumnName="DescEsp" msprop:Generator_ColumnVarNameInTable="columnDescEsp" msprop:Generator_ColumnPropNameInRow="DescEsp" msprop:Generator_ColumnPropNameInTable="DescEspColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="225" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="deptoDesc" msprop:Generator_UserColumnName="deptoDesc" msprop:Generator_ColumnVarNameInTable="columndeptoDesc" msprop:Generator_ColumnPropNameInRow="deptoDesc" msprop:Generator_ColumnPropNameInTable="deptoDescColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="225" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="System_Standard" msprop:Generator_UserColumnName="System_Standard" msprop:Generator_ColumnVarNameInTable="columnSystem_Standard" msprop:Generator_ColumnPropNameInRow="System_Standard" msprop:Generator_ColumnPropNameInTable="System_StandardColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Standard" msprop:Generator_UserColumnName="Standard" msprop:Generator_ColumnVarNameInTable="columnStandard" msprop:Generator_ColumnPropNameInRow="Standard" msprop:Generator_ColumnPropNameInTable="StandardColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Operadores" msprop:Generator_UserColumnName="Operadores" msprop:Generator_ColumnVarNameInTable="columnOperadores" msprop:Generator_ColumnPropNameInRow="Operadores" msprop:Generator_ColumnPropNameInTable="OperadoresColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Standard_Group" msprop:Generator_UserColumnName="Standard_Group" msprop:Generator_ColumnVarNameInTable="columnStandard_Group" msprop:Generator_ColumnPropNameInRow="Standard_Group" msprop:Generator_ColumnPropNameInTable="Standard_GroupColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="MTM" msprop:Generator_UserColumnName="MTM" msprop:Generator_ColumnVarNameInTable="columnMTM" msprop:Generator_ColumnPropNameInRow="MTM" msprop:Generator_ColumnPropNameInTable="MTMColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Oracle" msprop:Generator_UserColumnName="Oracle" msprop:Generator_ColumnVarNameInTable="columnOracle" msprop:Generator_ColumnPropNameInRow="Oracle" msprop:Generator_ColumnPropNameInTable="OracleColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FBU" msprop:Generator_UserColumnName="FBU" msprop:Generator_ColumnVarNameInTable="columnFBU" msprop:Generator_ColumnPropNameInRow="FBU" msprop:Generator_ColumnPropNameInTable="FBUColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fbu_desc" msprop:Generator_UserColumnName="fbu_desc" msprop:Generator_ColumnVarNameInTable="columnfbu_desc" msprop:Generator_ColumnPropNameInRow="fbu_desc" msprop:Generator_ColumnPropNameInTable="fbu_descColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="225" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CentroTrabajo" msprop:Generator_UserColumnName="CentroTrabajo" msprop:Generator_ColumnVarNameInTable="columnCentroTrabajo" msprop:Generator_ColumnPropNameInRow="CentroTrabajo" msprop:Generator_ColumnPropNameInTable="CentroTrabajoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="desc_ct" msprop:Generator_UserColumnName="desc_ct" msprop:Generator_ColumnVarNameInTable="columndesc_ct" msprop:Generator_ColumnPropNameInRow="desc_ct" msprop:Generator_ColumnPropNameInTable="desc_ctColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="aplicapara" msprop:Generator_UserColumnName="aplicapara" msprop:Generator_ColumnVarNameInTable="columnaplicapara" msprop:Generator_ColumnPropNameInRow="aplicapara" msprop:Generator_ColumnPropNameInTable="aplicaparaColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="descIng" msprop:Generator_UserColumnName="descIng" msprop:Generator_ColumnPropNameInRow="descIng" msprop:Generator_ColumnVarNameInTable="columndescIng" msprop:Generator_ColumnPropNameInTable="descIngColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="hrs_ing" msprop:Generator_UserColumnName="hrs_ing" msprop:Generator_ColumnVarNameInTable="columnhrs_ing" msprop:Generator_ColumnPropNameInRow="hrs_ing" msprop:Generator_ColumnPropNameInTable="hrs_ingColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="proceso" msprop:Generator_UserColumnName="proceso" msprop:Generator_ColumnVarNameInTable="columnproceso" msprop:Generator_ColumnPropNameInRow="proceso" msprop:Generator_ColumnPropNameInTable="procesoColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vouchers" msprop:Generator_UserTableName="vouchers" msprop:Generator_RowDeletedName="vouchersRowDeleted" msprop:Generator_RowChangedName="vouchersRowChanged" msprop:Generator_RowClassName="vouchersRow" msprop:Generator_RowChangingName="vouchersRowChanging" msprop:Generator_RowEvArgName="vouchersRowChangeEvent" msprop:Generator_RowEvHandlerName="vouchersRowChangeEventHandler" msprop:Generator_TableClassName="vouchersDataTable" msprop:Generator_TableVarName="tablevouchers" msprop:Generator_RowDeletingName="vouchersRowDeleting" msprop:Generator_TablePropName="vouchers">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Fecha" msprop:Generator_UserColumnName="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Turno" msprop:Generator_UserColumnName="Turno" msprop:Generator_ColumnVarNameInTable="columnTurno" msprop:Generator_ColumnPropNameInRow="Turno" msprop:Generator_ColumnPropNameInTable="TurnoColumn" type="xs:short" minOccurs="0" />
+              <xs:element name="Supervisor" msprop:Generator_UserColumnName="Supervisor" msprop:Generator_ColumnVarNameInTable="columnSupervisor" msprop:Generator_ColumnPropNameInRow="Supervisor" msprop:Generator_ColumnPropNameInTable="SupervisorColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Empezo" msprop:Generator_UserColumnName="Empezo" msprop:Generator_ColumnVarNameInTable="columnEmpezo" msprop:Generator_ColumnPropNameInRow="Empezo" msprop:Generator_ColumnPropNameInTable="EmpezoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Termino" msprop:Generator_UserColumnName="Termino" msprop:Generator_ColumnVarNameInTable="columnTermino" msprop:Generator_ColumnPropNameInRow="Termino" msprop:Generator_ColumnPropNameInTable="TerminoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CodigoOperacion" msprop:Generator_UserColumnName="CodigoOperacion" msprop:Generator_ColumnVarNameInTable="columnCodigoOperacion" msprop:Generator_ColumnPropNameInRow="CodigoOperacion" msprop:Generator_ColumnPropNameInTable="CodigoOperacionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Horas" msprop:Generator_UserColumnName="Horas" msprop:Generator_ColumnVarNameInTable="columnHoras" msprop:Generator_ColumnPropNameInRow="Horas" msprop:Generator_ColumnPropNameInTable="HorasColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="ProdTotal" msprop:Generator_UserColumnName="ProdTotal" msprop:Generator_ColumnVarNameInTable="columnProdTotal" msprop:Generator_ColumnPropNameInRow="ProdTotal" msprop:Generator_ColumnPropNameInTable="ProdTotalColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Produccion" msprop:Generator_UserColumnName="Produccion" msprop:Generator_ColumnVarNameInTable="columnProduccion" msprop:Generator_ColumnPropNameInRow="Produccion" msprop:Generator_ColumnPropNameInTable="ProduccionColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="numempl" msprop:Generator_UserColumnName="numempl" msprop:Generator_ColumnVarNameInTable="columnnumempl" msprop:Generator_ColumnPropNameInRow="numempl" msprop:Generator_ColumnPropNameInTable="numemplColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="nombEmpl" msprop:Generator_UserColumnName="nombEmpl" msprop:Generator_ColumnVarNameInTable="columnnombEmpl" msprop:Generator_ColumnPropNameInRow="nombEmpl" msprop:Generator_ColumnPropNameInTable="nombEmplColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="70" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DescCodOp" msprop:Generator_UserColumnName="DescCodOp" msprop:Generator_ColumnVarNameInTable="columnDescCodOp" msprop:Generator_ColumnPropNameInRow="DescCodOp" msprop:Generator_ColumnPropNameInTable="DescCodOpColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="225" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Eficiencia" msprop:Generator_UserColumnName="Eficiencia" msprop:Generator_ColumnVarNameInTable="columnEficiencia" msprop:Generator_ColumnPropNameInRow="Eficiencia" msprop:Generator_ColumnPropNameInTable="EficienciaColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Linea" msprop:Generator_UserColumnName="Linea" msprop:Generator_ColumnVarNameInTable="columnLinea" msprop:Generator_ColumnPropNameInRow="Linea" msprop:Generator_ColumnPropNameInTable="LineaColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FBU" msprop:Generator_UserColumnName="FBU" msprop:Generator_ColumnVarNameInTable="columnFBU" msprop:Generator_ColumnPropNameInRow="FBU" msprop:Generator_ColumnPropNameInTable="FBUColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fbu_desc" msprop:Generator_UserColumnName="fbu_desc" msprop:Generator_ColumnVarNameInTable="columnfbu_desc" msprop:Generator_ColumnPropNameInRow="fbu_desc" msprop:Generator_ColumnPropNameInTable="fbu_descColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="225" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="departamento" msprop:Generator_UserColumnName="departamento" msprop:Generator_ColumnPropNameInRow="departamento" msprop:Generator_ColumnVarNameInTable="columndepartamento" msprop:Generator_ColumnPropNameInTable="departamentoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="centrotrabajo" msprop:Generator_UserColumnName="centrotrabajo" msprop:Generator_ColumnPropNameInRow="centrotrabajo" msprop:Generator_ColumnVarNameInTable="columncentrotrabajo" msprop:Generator_ColumnPropNameInTable="centrotrabajoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="coordinador" msprop:Generator_UserColumnName="coordinador" msprop:Generator_ColumnPropNameInRow="coordinador" msprop:Generator_ColumnVarNameInTable="columncoordinador" msprop:Generator_ColumnPropNameInTable="coordinadorColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="lstLineas" msprop:Generator_UserTableName="lstLineas" msprop:Generator_RowDeletedName="lstLineasRowDeleted" msprop:Generator_RowChangedName="lstLineasRowChanged" msprop:Generator_RowClassName="lstLineasRow" msprop:Generator_RowChangingName="lstLineasRowChanging" msprop:Generator_RowEvArgName="lstLineasRowChangeEvent" msprop:Generator_RowEvHandlerName="lstLineasRowChangeEventHandler" msprop:Generator_TableClassName="lstLineasDataTable" msprop:Generator_TableVarName="tablelstLineas" msprop:Generator_RowDeletingName="lstLineasRowDeleting" msprop:Generator_TablePropName="lstLineas">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Linea" msprop:Generator_UserColumnName="Linea" msprop:Generator_ColumnVarNameInTable="columnLinea" msprop:Generator_ColumnPropNameInRow="Linea" msprop:Generator_ColumnPropNameInTable="LineaColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descripcion" msprop:Generator_UserColumnName="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="225" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Empleados" msprop:Generator_UserTableName="Empleados" msprop:Generator_RowDeletedName="EmpleadosRowDeleted" msprop:Generator_RowChangedName="EmpleadosRowChanged" msprop:Generator_RowClassName="EmpleadosRow" msprop:Generator_RowChangingName="EmpleadosRowChanging" msprop:Generator_RowEvArgName="EmpleadosRowChangeEvent" msprop:Generator_RowEvHandlerName="EmpleadosRowChangeEventHandler" msprop:Generator_TableClassName="EmpleadosDataTable" msprop:Generator_TableVarName="tableEmpleados" msprop:Generator_RowDeletingName="EmpleadosRowDeleting" msprop:Generator_TablePropName="Empleados">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Empleado" msprop:Generator_UserColumnName="Empleado" msprop:Generator_ColumnVarNameInTable="columnEmpleado" msprop:Generator_ColumnPropNameInRow="Empleado" msprop:Generator_ColumnPropNameInTable="EmpleadoColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Nombre" msprop:Generator_UserColumnName="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="70" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="lstCodDir" msprop:Generator_UserTableName="lstCodDir" msprop:Generator_RowDeletedName="lstCodDirRowDeleted" msprop:Generator_RowChangedName="lstCodDirRowChanged" msprop:Generator_RowClassName="lstCodDirRow" msprop:Generator_RowChangingName="lstCodDirRowChanging" msprop:Generator_RowEvArgName="lstCodDirRowChangeEvent" msprop:Generator_RowEvHandlerName="lstCodDirRowChangeEventHandler" msprop:Generator_TableClassName="lstCodDirDataTable" msprop:Generator_TableVarName="tablelstCodDir" msprop:Generator_RowDeletingName="lstCodDirRowDeleting" msprop:Generator_TablePropName="lstCodDir">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Turno" msprop:Generator_UserColumnName="Turno" msprop:Generator_ColumnVarNameInTable="columnTurno" msprop:Generator_ColumnPropNameInRow="Turno" msprop:Generator_ColumnPropNameInTable="TurnoColumn" type="xs:short" minOccurs="0" />
+              <xs:element name="Departamento" msprop:Generator_UserColumnName="Departamento" msprop:Generator_ColumnVarNameInTable="columnDepartamento" msprop:Generator_ColumnPropNameInRow="Departamento" msprop:Generator_ColumnPropNameInTable="DepartamentoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descripcion" msprop:Generator_UserColumnName="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DHoras" msprop:Generator_UserColumnName="DHoras" msprop:Generator_ColumnPropNameInRow="DHoras" msprop:Generator_ColumnVarNameInTable="columnDHoras" msprop:Generator_ColumnPropNameInTable="DHorasColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="HEarned" msprop:Generator_UserColumnName="HEarned" msprop:Generator_ColumnPropNameInRow="HEarned" msprop:Generator_ColumnVarNameInTable="columnHEarned" msprop:Generator_ColumnPropNameInTable="HEarnedColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Eficiencia" msprop:Generator_UserColumnName="Eficiencia" msprop:Generator_ColumnPropNameInRow="Eficiencia" msprop:Generator_ColumnVarNameInTable="columnEficiencia" msprop:Generator_ColumnPropNameInTable="EficienciaColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Productivity" msprop:Generator_UserColumnName="Productivity" msprop:Generator_ColumnPropNameInRow="Productivity" msprop:Generator_ColumnVarNameInTable="columnProductivity" msprop:Generator_ColumnPropNameInTable="ProductivityColumn" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="lstCodInd" msprop:Generator_UserTableName="lstCodInd" msprop:Generator_RowDeletedName="lstCodIndRowDeleted" msprop:Generator_RowChangedName="lstCodIndRowChanged" msprop:Generator_RowClassName="lstCodIndRow" msprop:Generator_RowChangingName="lstCodIndRowChanging" msprop:Generator_RowEvArgName="lstCodIndRowChangeEvent" msprop:Generator_RowEvHandlerName="lstCodIndRowChangeEventHandler" msprop:Generator_TableClassName="lstCodIndDataTable" msprop:Generator_TableVarName="tablelstCodInd" msprop:Generator_RowDeletingName="lstCodIndRowDeleting" msprop:Generator_TablePropName="lstCodInd">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Departamento" msprop:Generator_UserColumnName="Departamento" msprop:Generator_ColumnPropNameInRow="Departamento" msprop:Generator_ColumnVarNameInTable="columnDepartamento" msprop:Generator_ColumnPropNameInTable="DepartamentoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DHoras" msprop:Generator_UserColumnName="DHoras" msprop:Generator_ColumnPropNameInRow="DHoras" msprop:Generator_ColumnVarNameInTable="columnDHoras" msprop:Generator_ColumnPropNameInTable="DHorasColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Consecutivo" msprop:Generator_UserColumnName="Consecutivo" msprop:Generator_ColumnPropNameInRow="Consecutivo" msprop:Generator_ColumnVarNameInTable="columnConsecutivo" msprop:Generator_ColumnPropNameInTable="ConsecutivoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="efByDepto" msprop:Generator_UserTableName="efByDepto" msprop:Generator_RowDeletedName="efByDeptoRowDeleted" msprop:Generator_RowChangedName="efByDeptoRowChanged" msprop:Generator_RowClassName="efByDeptoRow" msprop:Generator_RowChangingName="efByDeptoRowChanging" msprop:Generator_RowEvArgName="efByDeptoRowChangeEvent" msprop:Generator_RowEvHandlerName="efByDeptoRowChangeEventHandler" msprop:Generator_TableClassName="efByDeptoDataTable" msprop:Generator_TableVarName="tableefByDepto" msprop:Generator_RowDeletingName="efByDeptoRowDeleting" msprop:Generator_TablePropName="efByDepto">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="depto" msprop:Generator_UserColumnName="depto" msprop:Generator_ColumnVarNameInTable="columndepto" msprop:Generator_ColumnPropNameInRow="depto" msprop:Generator_ColumnPropNameInTable="deptoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Descr" msprop:Generator_UserColumnName="Descr" msprop:Generator_ColumnVarNameInTable="columnDescr" msprop:Generator_ColumnPropNameInRow="Descr" msprop:Generator_ColumnPropNameInTable="DescrColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Turno" msprop:Generator_UserColumnName="Turno" msprop:Generator_ColumnVarNameInTable="columnTurno" msprop:Generator_ColumnPropNameInRow="Turno" msprop:Generator_ColumnPropNameInTable="TurnoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="hEarn" msprop:Generator_UserColumnName="hEarn" msprop:Generator_ColumnVarNameInTable="columnhEarn" msprop:Generator_ColumnPropNameInRow="hEarn" msprop:Generator_ColumnPropNameInTable="hEarnColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="dHrs" msprop:Generator_UserColumnName="dHrs" msprop:Generator_ColumnVarNameInTable="columndHrs" msprop:Generator_ColumnPropNameInRow="dHrs" msprop:Generator_ColumnPropNameInTable="dHrsColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ef" msprop:Generator_UserColumnName="ef" msprop:Generator_ColumnVarNameInTable="columnef" msprop:Generator_ColumnPropNameInRow="ef" msprop:Generator_ColumnPropNameInTable="efColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Produc" msprop:Generator_UserColumnName="Produc" msprop:Generator_ColumnVarNameInTable="columnProduc" msprop:Generator_ColumnPropNameInRow="Produc" msprop:Generator_ColumnPropNameInTable="ProducColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0030_080" msprop:Generator_UserColumnName="0080" msprop:Generator_ColumnVarNameInTable="column0080" msprop:Generator_ColumnPropNameInRow="_0080" msprop:Generator_ColumnPropNameInTable="_0080Column" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0030_081" msprop:Generator_UserColumnName="0081" msprop:Generator_ColumnVarNameInTable="column0081" msprop:Generator_ColumnPropNameInRow="_0081" msprop:Generator_ColumnPropNameInTable="_0081Column" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0030_082" msprop:Generator_UserColumnName="0082" msprop:Generator_ColumnVarNameInTable="column0082" msprop:Generator_ColumnPropNameInRow="_0082" msprop:Generator_ColumnPropNameInTable="_0082Column" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0030_083" msprop:Generator_UserColumnName="0083" msprop:Generator_ColumnVarNameInTable="column0083" msprop:Generator_ColumnPropNameInRow="_0083" msprop:Generator_ColumnPropNameInTable="_0083Column" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0030_084" msprop:Generator_UserColumnName="0084" msprop:Generator_ColumnVarNameInTable="column0084" msprop:Generator_ColumnPropNameInRow="_0084" msprop:Generator_ColumnPropNameInTable="_0084Column" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0030_085" msprop:Generator_UserColumnName="0085" msprop:Generator_ColumnVarNameInTable="column0085" msprop:Generator_ColumnPropNameInRow="_0085" msprop:Generator_ColumnPropNameInTable="_0085Column" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0030_086" msprop:Generator_UserColumnName="0086" msprop:Generator_ColumnVarNameInTable="column0086" msprop:Generator_ColumnPropNameInRow="_0086" msprop:Generator_ColumnPropNameInTable="_0086Column" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0030_087" msprop:Generator_UserColumnName="0087" msprop:Generator_ColumnVarNameInTable="column0087" msprop:Generator_ColumnPropNameInRow="_0087" msprop:Generator_ColumnPropNameInTable="_0087Column" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0030_088" msprop:Generator_UserColumnName="0088" msprop:Generator_ColumnVarNameInTable="column0088" msprop:Generator_ColumnPropNameInRow="_0088" msprop:Generator_ColumnPropNameInTable="_0088Column" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0030_089" msprop:Generator_UserColumnName="0089" msprop:Generator_ColumnVarNameInTable="column0089" msprop:Generator_ColumnPropNameInRow="_0089" msprop:Generator_ColumnPropNameInTable="_0089Column" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0030_090" msprop:Generator_UserColumnName="0090" msprop:Generator_ColumnVarNameInTable="column0090" msprop:Generator_ColumnPropNameInRow="_0090" msprop:Generator_ColumnPropNameInTable="_0090Column" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0030_091" msprop:Generator_UserColumnName="0091" msprop:Generator_ColumnVarNameInTable="column0091" msprop:Generator_ColumnPropNameInRow="_0091" msprop:Generator_ColumnPropNameInTable="_0091Column" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0030_092" msprop:Generator_UserColumnName="0092" msprop:Generator_ColumnVarNameInTable="column0092" msprop:Generator_ColumnPropNameInRow="_0092" msprop:Generator_ColumnPropNameInTable="_0092Column" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0030_093" msprop:Generator_UserColumnName="0093" msprop:Generator_ColumnVarNameInTable="column0093" msprop:Generator_ColumnPropNameInRow="_0093" msprop:Generator_ColumnPropNameInTable="_0093Column" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0030_094" msprop:Generator_UserColumnName="0094" msprop:Generator_ColumnVarNameInTable="column0094" msprop:Generator_ColumnPropNameInRow="_0094" msprop:Generator_ColumnPropNameInTable="_0094Column" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0030_095" msprop:Generator_UserColumnName="0095" msprop:Generator_ColumnVarNameInTable="column0095" msprop:Generator_ColumnPropNameInRow="_0095" msprop:Generator_ColumnPropNameInTable="_0095Column" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0030_096" msprop:Generator_UserColumnName="0096" msprop:Generator_ColumnVarNameInTable="column0096" msprop:Generator_ColumnPropNameInRow="_0096" msprop:Generator_ColumnPropNameInTable="_0096Column" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0030_097" msprop:Generator_UserColumnName="0097" msprop:Generator_ColumnVarNameInTable="column0097" msprop:Generator_ColumnPropNameInRow="_0097" msprop:Generator_ColumnPropNameInTable="_0097Column" type="xs:string" minOccurs="0" />
+              <xs:element name="HI" msprop:Generator_UserColumnName="HI" msprop:Generator_ColumnVarNameInTable="columnHI" msprop:Generator_ColumnPropNameInRow="HI" msprop:Generator_ColumnPropNameInTable="HIColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="HT" msprop:Generator_UserColumnName="HT" msprop:Generator_ColumnVarNameInTable="columnHT" msprop:Generator_ColumnPropNameInRow="HT" msprop:Generator_ColumnPropNameInTable="HTColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Util" msprop:Generator_UserColumnName="Util" msprop:Generator_ColumnVarNameInTable="columnUtil" msprop:Generator_ColumnPropNameInRow="Util" msprop:Generator_ColumnPropNameInTable="UtilColumn" type="xs:double" default="0" minOccurs="0" />
+              <xs:element name="ct" msprop:Generator_UserColumnName="ct" msprop:Generator_ColumnPropNameInRow="ct" msprop:Generator_ColumnVarNameInTable="columnct" msprop:Generator_ColumnPropNameInTable="ctColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="linea" msprop:Generator_UserColumnName="linea" msprop:Generator_ColumnPropNameInRow="linea" msprop:Generator_ColumnVarNameInTable="columnlinea" msprop:Generator_ColumnPropNameInTable="lineaColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="codigooperacion" msprop:Generator_UserColumnName="codigooperacion" msprop:Generator_ColumnPropNameInRow="codigooperacion" msprop:Generator_ColumnVarNameInTable="columncodigooperacion" msprop:Generator_ColumnPropNameInTable="codigooperacionColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="codOpEmp" msprop:Generator_UserColumnName="codOpEmp" msprop:Generator_ColumnPropNameInRow="codOpEmp" msprop:Generator_ColumnVarNameInTable="columncodOpEmp" msprop:Generator_ColumnPropNameInTable="codOpEmpColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="emp" msprop:Generator_UserColumnName="emp" msprop:Generator_ColumnPropNameInRow="emp" msprop:Generator_ColumnVarNameInTable="columnemp" msprop:Generator_ColumnPropNameInTable="empColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="sup" msprop:Generator_UserColumnName="sup" msprop:Generator_ColumnPropNameInRow="sup" msprop:Generator_ColumnVarNameInTable="columnsup" msprop:Generator_ColumnPropNameInTable="supColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Fbu" msprop:Generator_UserColumnName="Fbu" msprop:Generator_ColumnPropNameInRow="Fbu" msprop:Generator_ColumnVarNameInTable="columnFbu" msprop:Generator_ColumnPropNameInTable="FbuColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="fbuDesc" msprop:Generator_UserColumnName="fbuDesc" msprop:Generator_ColumnPropNameInRow="fbuDesc" msprop:Generator_ColumnVarNameInTable="columnfbuDesc" msprop:Generator_ColumnPropNameInTable="fbuDescColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="lineaDesc" msprop:Generator_UserColumnName="lineaDesc" msprop:Generator_ColumnPropNameInRow="lineaDesc" msprop:Generator_ColumnVarNameInTable="columnlineaDesc" msprop:Generator_ColumnPropNameInTable="lineaDescColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="coDesc" msprop:Generator_UserColumnName="coDesc" msprop:Generator_ColumnPropNameInRow="coDesc" msprop:Generator_ColumnVarNameInTable="columncoDesc" msprop:Generator_ColumnPropNameInTable="coDescColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="deptoDesc" msprop:Generator_UserColumnName="deptoDesc" msprop:Generator_ColumnPropNameInRow="deptoDesc" msprop:Generator_ColumnVarNameInTable="columndeptoDesc" msprop:Generator_ColumnPropNameInTable="deptoDescColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="numEmp" msprop:Generator_UserColumnName="numEmp" msprop:Generator_ColumnPropNameInRow="numEmp" msprop:Generator_ColumnVarNameInTable="columnnumEmp" msprop:Generator_ColumnPropNameInTable="numEmpColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="overhead" msprop:Generator_UserColumnName="overhead" msprop:Generator_ColumnVarNameInTable="columnoverhead" msprop:Generator_ColumnPropNameInRow="overhead" msprop:Generator_ColumnPropNameInTable="overheadColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Fecha" msprop:Generator_UserColumnName="Fecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Departamentos" msprop:Generator_UserTableName="Departamentos" msprop:Generator_RowDeletedName="DepartamentosRowDeleted" msprop:Generator_RowChangedName="DepartamentosRowChanged" msprop:Generator_RowClassName="DepartamentosRow" msprop:Generator_RowChangingName="DepartamentosRowChanging" msprop:Generator_RowEvArgName="DepartamentosRowChangeEvent" msprop:Generator_RowEvHandlerName="DepartamentosRowChangeEventHandler" msprop:Generator_TableClassName="DepartamentosDataTable" msprop:Generator_TableVarName="tableDepartamentos" msprop:Generator_RowDeletingName="DepartamentosRowDeleting" msprop:Generator_TablePropName="Departamentos">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Departamento" msprop:Generator_UserColumnName="Departamento" msprop:Generator_ColumnPropNameInRow="Departamento" msprop:Generator_ColumnVarNameInTable="columnDepartamento" msprop:Generator_ColumnPropNameInTable="DepartamentoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descripcion" msprop:Generator_UserColumnName="Descripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="225" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FBU" msprop:Generator_UserColumnName="FBU" msprop:Generator_ColumnVarNameInTable="columnFBU" msprop:Generator_ColumnPropNameInRow="FBU" msprop:Generator_ColumnPropNameInTable="FBUColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fbu_desc" msprop:Generator_UserColumnName="fbu_desc" msprop:Generator_ColumnVarNameInTable="columnfbu_desc" msprop:Generator_ColumnPropNameInRow="fbu_desc" msprop:Generator_ColumnPropNameInTable="fbu_descColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="225" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="overhead" msprop:Generator_UserColumnName="overhead" msprop:Generator_ColumnVarNameInTable="columnoverhead" msprop:Generator_ColumnPropNameInRow="overhead" msprop:Generator_ColumnPropNameInTable="overheadColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="lstFbus" msprop:Generator_UserTableName="lstFbus" msprop:Generator_RowDeletedName="lstFbusRowDeleted" msprop:Generator_RowChangedName="lstFbusRowChanged" msprop:Generator_RowClassName="lstFbusRow" msprop:Generator_RowChangingName="lstFbusRowChanging" msprop:Generator_RowEvArgName="lstFbusRowChangeEvent" msprop:Generator_RowEvHandlerName="lstFbusRowChangeEventHandler" msprop:Generator_TableClassName="lstFbusDataTable" msprop:Generator_TableVarName="tablelstFbus" msprop:Generator_RowDeletingName="lstFbusRowDeleting" msprop:Generator_TablePropName="lstFbus">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Descripcion" msprop:Generator_UserColumnName="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="225" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FBU" msprop:Generator_UserColumnName="FBU" msprop:Generator_ColumnVarNameInTable="columnFBU" msprop:Generator_ColumnPropNameInRow="FBU" msprop:Generator_ColumnPropNameInTable="FBUColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Supervisores" msprop:Generator_UserTableName="Supervisores" msprop:Generator_RowDeletedName="SupervisoresRowDeleted" msprop:Generator_RowChangedName="SupervisoresRowChanged" msprop:Generator_RowClassName="SupervisoresRow" msprop:Generator_RowChangingName="SupervisoresRowChanging" msprop:Generator_RowEvArgName="SupervisoresRowChangeEvent" msprop:Generator_RowEvHandlerName="SupervisoresRowChangeEventHandler" msprop:Generator_TableClassName="SupervisoresDataTable" msprop:Generator_TableVarName="tableSupervisores" msprop:Generator_RowDeletingName="SupervisoresRowDeleting" msprop:Generator_TablePropName="Supervisores">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Supervisor" msprop:Generator_UserColumnName="Supervisor" msprop:Generator_ColumnVarNameInTable="columnSupervisor" msprop:Generator_ColumnPropNameInRow="Supervisor" msprop:Generator_ColumnPropNameInTable="SupervisorColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nombre" msprop:Generator_UserColumnName="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_Coordinador" msprop:Generator_UserColumnName="ID_Coordinador" msprop:Generator_ColumnVarNameInTable="columnID_Coordinador" msprop:Generator_ColumnPropNameInRow="ID_Coordinador" msprop:Generator_ColumnPropNameInTable="ID_CoordinadorColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nombre_coord" msprop:Generator_UserColumnName="Nombre_coord" msprop:Generator_ColumnVarNameInTable="columnNombre_coord" msprop:Generator_ColumnPropNameInRow="Nombre_coord" msprop:Generator_ColumnPropNameInTable="Nombre_coordColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="conciliacion" msprop:Generator_UserTableName="conciliacion" msprop:Generator_RowDeletedName="conciliacionRowDeleted" msprop:Generator_RowChangedName="conciliacionRowChanged" msprop:Generator_RowClassName="conciliacionRow" msprop:Generator_RowChangingName="conciliacionRowChanging" msprop:Generator_RowEvArgName="conciliacionRowChangeEvent" msprop:Generator_RowEvHandlerName="conciliacionRowChangeEventHandler" msprop:Generator_TableClassName="conciliacionDataTable" msprop:Generator_TableVarName="tableconciliacion" msprop:Generator_RowDeletingName="conciliacionRowDeleting" msprop:Generator_TablePropName="conciliacion">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="empleado" msprop:Generator_UserColumnName="empleado" msprop:Generator_ColumnPropNameInRow="empleado" msprop:Generator_ColumnVarNameInTable="columnempleado" msprop:Generator_ColumnPropNameInTable="empleadoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="nombre" msprop:Generator_UserColumnName="nombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="total_horas" msprop:Generator_UserColumnName="total_horas" msprop:Generator_ColumnPropNameInRow="total_horas" msprop:Generator_ColumnVarNameInTable="columntotal_horas" msprop:Generator_ColumnPropNameInTable="total_horasColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="hrs_voucher" msprop:Generator_UserColumnName="hrs_voucher" msprop:Generator_ColumnPropNameInRow="hrs_voucher" msprop:Generator_ColumnVarNameInTable="columnhrs_voucher" msprop:Generator_ColumnPropNameInTable="hrs_voucherColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="coordinador" msprop:Generator_UserColumnName="coordinador" msprop:Generator_ColumnPropNameInRow="coordinador" msprop:Generator_ColumnVarNameInTable="columncoordinador" msprop:Generator_ColumnPropNameInTable="coordinadorColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:CodigosDeOperacion" />
+      <xs:field xpath="mstns:CodigoOperacion" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

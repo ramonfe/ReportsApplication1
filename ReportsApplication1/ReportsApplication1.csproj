@@ -1,0 +1,602 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{622B900C-15B0-416F-9910-08CD62EFA424}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ReportsApplication1</RootNamespace>
+    <AssemblyName>ReportsApplication1</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ManifestCertificateThumbprint>39C358997B978BF8ABFA44667153BC0B71FF6EE1</ManifestCertificateThumbprint>
+    <ManifestKeyFile>ReportsApplication1_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <PublishUrl>C:\MyProjects\vs2008\ReportsApplication1\publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <UpdateUrl>\\W2LXFS\GROUP\SIMGAP\INSTALACION\</UpdateUrl>
+    <SupportUrl>http://www.dilecso.com.mx</SupportUrl>
+    <TargetCulture>es-MX</TargetCulture>
+    <ProductName>SIMGAP</ProductName>
+    <PublisherName>DILECSO</PublisherName>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>22</ApplicationRevision>
+    <ApplicationVersion>1.0.0.22</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DataGridViewCustomColumn, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\net code examples\Technologies\WinForms\DataGridViewCustomColumn\CS\DataGridViewCustomColumn\bin\Debug\DataGridViewCustomColumn.dll</HintPath>
+    </Reference>
+    <Reference Include="dgv, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\dgv\dgv\bin\Debug\dgv.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmRepHi2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRepHi2.Designer.cs">
+      <DependentUpon>frmRepHi2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dbClass.cs" />
+    <Compile Include="frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAbout.Designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConcTress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConcTress.Designer.cs">
+      <DependentUpon>frmConcTress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDiscrEmplChecadas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDiscrEmplChecadas.Designer.cs">
+      <DependentUpon>frmDiscrEmplChecadas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPriv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPriv.Designer.cs">
+      <DependentUpon>frmPriv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRConc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRConc.Designer.cs">
+      <DependentUpon>frmRConc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSearchCodOp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSearchCodOp.Designer.cs">
+      <DependentUpon>frmSearchCodOp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCodOp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCodOp.Designer.cs">
+      <DependentUpon>frmCodOp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModIng.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModIng.Designer.cs">
+      <DependentUpon>frmModIng.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRepHi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRepHi.Designer.cs">
+      <DependentUpon>frmRepHi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSearchcomun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSearchcomun.Designer.cs">
+      <DependentUpon>frmSearchcomun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVoucher.Designer.cs">
+      <DependentUpon>frmVoucher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRfbus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRfbus.Designer.cs">
+      <DependentUpon>frmRfbus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEfEmpCo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEfEmpCo.Designer.cs">
+      <DependentUpon>frmEfEmpCo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEfSup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEfSup.Designer.cs">
+      <DependentUpon>frmEfSup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEfEm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEfEm.Designer.cs">
+      <DependentUpon>frmEfEm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEfCoE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEfCoE.Designer.cs">
+      <DependentUpon>frmEfCoE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEfCo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEfCo.Designer.cs">
+      <DependentUpon>frmEfCo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEfLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEfLine.Designer.cs">
+      <DependentUpon>frmEfLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEfCt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEfCt.Designer.cs">
+      <DependentUpon>frmEfCt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formEfDepto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formEfDepto.Designer.cs">
+      <DependentUpon>formEfDepto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRvouch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRvouch.Designer.cs">
+      <DependentUpon>frmRvouch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRco.Designer.cs">
+      <DependentUpon>frmRco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRlin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRlin.Designer.cs">
+      <DependentUpon>frmRlin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRct.Designer.cs">
+      <DependentUpon>frmRct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRdep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRdep.Designer.cs">
+      <DependentUpon>frmRdep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EficienDataSet.cs">
+      <DependentUpon>EficienDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EficienDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EficienDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmFiltros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFiltros.Designer.cs">
+      <DependentUpon>frmFiltros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenu.Designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenu2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenu2.Designer.cs">
+      <DependentUpon>frmMenu2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVouchersSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVouchersSearch.Designer.cs">
+      <DependentUpon>frmVouchersSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="repHi2.rdlc" />
+    <EmbeddedResource Include="frmRepHi2.resx">
+      <DependentUpon>frmRepHi2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConcTress.resx">
+      <DependentUpon>frmConcTress.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDiscrEmplChecadas.resx">
+      <DependentUpon>frmDiscrEmplChecadas.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPriv.resx">
+      <DependentUpon>frmPriv.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRConc.resx">
+      <DependentUpon>frmRConc.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSearchCodOp.resx">
+      <DependentUpon>frmSearchCodOp.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCodOp.resx">
+      <DependentUpon>frmCodOp.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModIng.resx">
+      <DependentUpon>frmModIng.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRepHi.resx">
+      <DependentUpon>frmRepHi.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSearchcomun.resx">
+      <DependentUpon>frmSearchcomun.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVoucher.resx">
+      <DependentUpon>frmVoucher.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVouchersSearch.resx">
+      <DependentUpon>frmVouchersSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="repConc.rdlc" />
+    <EmbeddedResource Include="repEfEmpCo.rdlc" />
+    <EmbeddedResource Include="frmRfbus.resx">
+      <DependentUpon>frmRfbus.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="repFbu.rdlc" />
+    <EmbeddedResource Include="frmEfEmpCo.resx">
+      <DependentUpon>frmEfEmpCo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="repEfSup.rdlc" />
+    <EmbeddedResource Include="repEfEmp.rdlc" />
+    <EmbeddedResource Include="repEfCoEm.rdlc" />
+    <EmbeddedResource Include="repEfCo.rdlc" />
+    <EmbeddedResource Include="repEfLine.rdlc" />
+    <EmbeddedResource Include="frmEfSup.resx">
+      <DependentUpon>frmEfSup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEfEm.resx">
+      <DependentUpon>frmEfEm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEfCoE.resx">
+      <DependentUpon>frmEfCoE.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEfCo.resx">
+      <DependentUpon>frmEfCo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEfLine.resx">
+      <DependentUpon>frmEfLine.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="repEfCt.rdlc" />
+    <EmbeddedResource Include="frmEfCt.resx">
+      <DependentUpon>frmEfCt.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formEfDepto.resx">
+      <DependentUpon>formEfDepto.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRvouch.resx">
+      <DependentUpon>frmRvouch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="repEfDepto.rdlc" />
+    <EmbeddedResource Include="repHi.rdlc" />
+    <EmbeddedResource Include="repVoucher.rdlc" />
+    <EmbeddedResource Include="frmRco.resx">
+      <DependentUpon>frmRco.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRlin.resx">
+      <DependentUpon>frmRlin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRct.resx">
+      <DependentUpon>frmRct.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRdep.resx">
+      <DependentUpon>frmRdep.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRsup.resx">
+      <DependentUpon>frmRsup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="repCenTrab.rdlc" />
+    <EmbeddedResource Include="repCodOp.rdlc" />
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="repLin.rdlc" />
+    <EmbeddedResource Include="repSup.rdlc" />
+    <EmbeddedResource Include="frmFiltros.resx">
+      <DependentUpon>frmFiltros.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenu2.resx">
+      <DependentUpon>frmMenu2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="repDeptos.rdlc" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="EficienDataSet.xsc">
+      <DependentUpon>EficienDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EficienDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EficienDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EficienDataSet.xss">
+      <DependentUpon>EficienDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="frmRsup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRsup.Designer.cs">
+      <DependentUpon>frmRsup.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Eficien.mdb">
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="ADODB">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DataGridViewCustomColumn">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="dgv">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Eficien.mdb">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.Common">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.ProcessingObjectModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
