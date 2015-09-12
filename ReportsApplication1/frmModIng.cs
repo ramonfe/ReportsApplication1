@@ -99,6 +99,7 @@ namespace ReportsApplication1
                     break;
                 case "nDepura":
                     tabControl.TabPages.Add(tabDepura);
+                    dateTimeDepura.Value = DateTime.Today.AddDays(-365);
                     break;
                 case "otro":
                     break;
@@ -3230,23 +3231,28 @@ namespace ReportsApplication1
 
         private void btnDepura_Click(object sender, EventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
-            int rowsAffected = 0;
-            string mensaje = "";
-            rowsAffected = DepuraEmpVoucher();
-            //despliega en etiqueta
-            mensaje = "Tabla: EmpVoucher, se Borraron: " + rowsAffected.ToString() + " Registros \n";
-            lblMsg.Text = mensaje;
-            Application.DoEvents();
-            rowsAffected = DepuradetVoucher();
-            mensaje += "Tabla: DetVoucher, se Borraron: " + rowsAffected.ToString() + " Registros \n";
-            lblMsg.Text = mensaje;
-            Application.DoEvents();
-            rowsAffected = DepuraIndiceVoucher();
-            mensaje += "Tabla: IndiceVoucher, se Borraron: " + rowsAffected.ToString() + " Registros \n";
-            lblMsg.Text = mensaje;
-            Application.DoEvents();
-            Cursor.Current = Cursors.Default;
+            DialogResult DialogRes = MessageBox.Show("Los registros se respaldaran y borraran de la BD, deseas continuar?",
+                "Precaucion", MessageBoxButtons.YesNo);
+            if (DialogRes == System.Windows.Forms.DialogResult.Yes)
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                int rowsAffected = 0;
+                string mensaje = "";
+                rowsAffected = DepuraEmpVoucher();
+                //despliega en etiqueta
+                mensaje = "Tabla: EmpVoucher, se Borraron: " + rowsAffected.ToString() + " Registros \n";
+                lblMsg.Text = mensaje;
+                Application.DoEvents();
+                rowsAffected = DepuradetVoucher();
+                mensaje += "Tabla: DetVoucher, se Borraron: " + rowsAffected.ToString() + " Registros \n";
+                lblMsg.Text = mensaje;
+                Application.DoEvents();
+                rowsAffected = DepuraIndiceVoucher();
+                mensaje += "Tabla: IndiceVoucher, se Borraron: " + rowsAffected.ToString() + " Registros \n";
+                lblMsg.Text = mensaje;
+                Application.DoEvents();
+                Cursor.Current = Cursors.Default;
+            }
         }
         private int DepuraEmpVoucher()
         {

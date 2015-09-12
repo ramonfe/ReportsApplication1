@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Desarrollado por Ramon Felix. ramonfe@gmail.com")]
 [assembly: AssemblyProduct("ReportsApplication1")]
-[assembly: AssemblyCopyright("Copyright © Leviton de México 2010")]
+[assembly: AssemblyCopyright("Copyright © Leviton de México 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -29,5 +29,5 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("1.0.0.22")]
-[assembly: AssemblyFileVersion("1.0.0.22")]
+[assembly: AssemblyVersion("1.0.0.23")]
+[assembly: AssemblyFileVersion("1.0.0.23")]

@@ -29,7 +29,7 @@
     </SccAuxPath>
     <SccProvider>
     </SccProvider>
-    <PublishUrl>C:\MyProjects\vs2008\ReportsApplication1\publish\</PublishUrl>
+    <PublishUrl>C:\MyProjects\others\simgap\simgap_bck_code\ReportsApplication1\publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -39,17 +39,21 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <UpdateUrl>\\W2LXFS\GROUP\SIMGAP\INSTALACION\</UpdateUrl>
-    <SupportUrl>http://www.dilecso.com.mx</SupportUrl>
+    <UpdateUrl>\\W2ECFS\GROUP\SIMGAP\INSTALACION_TEMPORAL\</UpdateUrl>
+    <SupportUrl>https://twitter.com/ramonfe</SupportUrl>
     <TargetCulture>es-MX</TargetCulture>
-    <ProductName>SIMGAP</ProductName>
-    <PublisherName>DILECSO</PublisherName>
+    <ProductName>SIMGAP2.0</ProductName>
+    <PublisherName>Ramon Felix</PublisherName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <ApplicationRevision>22</ApplicationRevision>
     <ApplicationVersion>1.0.0.22</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+    <BootstrapperComponentsUrl>\\MyProjects\others\simgap</BootstrapperComponentsUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -272,7 +276,6 @@
     </Compile>
     <Compile Include="EficienDataSet.cs">
       <DependentUpon>EficienDataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="EficienDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -580,7 +583,27 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.DataVisualization">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
     <PublishFile Include="Microsoft.ReportViewer.ProcessingObjectModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.WinForms">
       <Visible>False</Visible>
       <Group>
       </Group>

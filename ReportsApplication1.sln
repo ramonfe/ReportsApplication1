@@ -1,19 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportsApplication1", "ReportsApplication1\ReportsApplication1.csproj", "{622B900C-15B0-416F-9910-08CD62EFA424}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup1", "Setup1\Setup1.vdproj", "{79EE7455-0588-461A-9706-72E9CB0ABF50}"
-EndProject
 Global
-	GlobalSection(SourceCodeControl) = preSolution
-		SccNumberOfProjects = 1
-		SccProjectUniqueName0 = Setup1\\Setup1.vdproj
-		SccProjectName0 = \u0022$/simgap/ReportsApplication1\u0022,\u0020DAAAAAAA
-		SccLocalPath0 = .
-		SccProvider0 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
-		SccProjectFilePathRelativizedFromConnection0 = Setup1\\
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -23,8 +15,6 @@ Global
 		{622B900C-15B0-416F-9910-08CD62EFA424}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{622B900C-15B0-416F-9910-08CD62EFA424}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{622B900C-15B0-416F-9910-08CD62EFA424}.Release|Any CPU.Build.0 = Release|Any CPU
-		{79EE7455-0588-461A-9706-72E9CB0ABF50}.Debug|Any CPU.ActiveCfg = Debug
-		{79EE7455-0588-461A-9706-72E9CB0ABF50}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
